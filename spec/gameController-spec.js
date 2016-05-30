@@ -5,7 +5,7 @@ describe('test for gameController',function () {
     
     beforeEach(function () {
         gameController = require('../src/shell/gameController');
-        pretendInput = require('../src/model/pretendInput');
+        pretendInput = require('../src/model/input');
         generateNumber = require('../src/kernel/generateNumber');
 
         spyOn(generateNumber,'method').and.returnValue('1234');
