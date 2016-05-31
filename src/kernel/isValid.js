@@ -2,12 +2,13 @@ function isValid(digits) {
     if (digits == null){
         return false;
     }
-    var isFourNumber = checkDigitsNumber(digits);
+    var isFourBits = checkBit(digits);
     var isNonRepetition = checkRepetition(digits);
-    return isFourNumber && isNonRepetition;
+    var isNumbers = checkNumber(digits);
+    return (isFourBits && isNonRepetition) && isNumbers;
 }
 
-function checkDigitsNumber(digits){
+function checkBit(digits){
     return (digits.length == 4);
 }
 
@@ -21,5 +22,17 @@ function checkRepetition(digits){
     }
     return true;
 }
+
+function checkNumber(digits) {
+    var result = true;
+    for (var i = 0,len = digits.length;i < len;i++){
+        if(isNaN(parseInt(digits[i]))){
+            result = false;
+        }
+    }
+    return result;
+}
+
+
 
 module.exports = isValid;

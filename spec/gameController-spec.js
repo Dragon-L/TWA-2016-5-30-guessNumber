@@ -22,5 +22,8 @@ describe('test for gameController',function () {
     it('should return true when guess right at last times',function () {
         spyOn(pretendInput,'method').and.returnValues('1634','2345','3456','4567','5678','1234');
         expect(gameController()).toEqual(true);
+    });it('should run normal when player input invalid sign',function () {
+        spyOn(pretendInput,'method').and.returnValues('1634','qwer','2345','3456','4567','5678','1234');
+        expect(gameController()).toEqual(true);
     });
 });
